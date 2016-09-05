@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prisma</title>
+</head>
+<link rel="stylesheet" type="text/css" href="../static/dist/dropify/css/dropify.min.css">
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../static/dist/elastislide/css/elastislide.css">
+<link rel="stylesheet" type="text/css" href="../static/css/custom.css">
+<link rel="stylesheet" type="text/css" href="../static/css/waitMe/waitMe.min.css"/>
+
+<link rel="stylesheet" type="text/css" href="../static/dist/notificationFx/css/normalize.css"/>
+<link rel="stylesheet" type="text/css" href="../static/dist/notificationFx/css/ns-default.css"/>
+<link rel="stylesheet" type="text/css" href="../static/dist/notificationFx/css/ns-style-growl.css"/>
+
+<style type="text/css">
+	body{
+		background:url(../static/images/bg.jpg)
+	}
+	.style-item{
+		width:150px;
+		height: 150px;
+	}
+	.img-box{
+		width:150px;
+		height: 150px;
+	}
+	.img-box img{
+		width:100%;
+		height: 150px;
+	}
+	.select{
+		border:4px solid #096;
+		z-index: 3000;
+	}
+	.select .img-box img{
+		width:100%;
+		height: 140px;
+	}
+
+	.upload-box,.dropify-fr,.dropify-wrapper{
+		height:300px;
+	}
+	.margin-box{
+		margin-top:20px;
+	}
+	.title-tip{
+		font-family: '微软雅黑';
+		color:#666;
+	}
+</style>
+<body>
+	<div ng-app="prismaApp">
+		<header>
+	        <nav class="navbar navbar-default">
+		        <div class="container">
+		            <div class="navbar-header">
+		                <a class="navbar-brand" href="/">Prisma</a>
+		            </div>
+		        </div>
+	        </nav>
+	    </header>
+	    <section class="d3-container" ng-controller="buildController">
+	    	<form  enctype='multipart/form-data' method='post' action='javascript:;' role = "form" id = "frmUpload">
+		    	<div class="row">
+		    		<div class="col-md-8 col-md-offset-2 upload-box">
+		    			<input type="text" style="display:none" name="imgType" id="imgType" ng-model="form.type"/>
+		    			<input type="file" class="dropify-fr" id="imgFile" name="imgFile" data-default-file="" fileupload/>
+		    		</div>
+					<div class="col-md-8 col-md-offset-2 fixed-bar margin-box">
+						<h3 class="title-tip">选择你要生成的图片风格</h3>
+						<ul class="elastislide-list" wrap-watcher>
+							<li class="style-item" data-type="bijiasuo1"><a class="img-box" href="#1"><img src="../static/images/tpl/bijiasuo1.jpg"></a></li>
+							<li class="style-item" data-type="bijiasuo2"><a class="img-box" href="#2"><img src="../static/images/tpl/bijiasuo2.jpg"></a></li>
+							<li class="style-item" data-type="lafeier1"><a class="img-box" href="#3"><img src="../static/images/tpl/lafeier1.jpg"></a></li>
+							<li class="style-item" data-type="fangao1"><a class="img-box" href="#4"><img src="../static/images/tpl/fangao1.jpg"></a></li>
+							<li class="style-item" data-type="lafeier2"><a class="img-box" href="#5"><img src="../static/images/tpl/lafeier2.jpg"></a></li>
+							<li class="style-item" data-type="lafeier3"><a class="img-box" href="#6"><img src="../static/images/tpl/lafeier3.jpg"></a></li>
+							<li class="style-item" data-type="mengdelian1"><a class="img-box" href="#7"><img src="../static/images/tpl/mengdelian1.jpg"></a></li>
+							<li class="style-item" data-type="muxia1"><a class="img-box" href="#8"><img src="../static/images/tpl/muxia1.jpg"></a></li>
+							<li class="style-item" data-type="muxia2"><a class="img-box" href="#9"><img src="../static/images/tpl/muxia2.jpg"></a></li>
+						</ul>
+					</div>
+					<div class="col-md-8 col-md-offset-2 margin-box">
+						<a class="btn btn-success btn-lg" style="float:right;margin-left:20px;" ng-show="imgUrl" download="{{imgUrl}}" href="{{imgName}}">下载图片</a>
+						<button class="btn btn-primary btn-lg" style="float:right" buildbtn>生成图片</button>
+					</div>
+		    	</div>
+			</form>
+	    </section>
+		
+	</div>
+</body>
+<script type="text/javascript" src="../static/js/modernizr.custom.17475.js"></script>
+
+<script type="text/javascript" src="../static/js/jquery/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../static/js/angular/angular.min.js"></script>
+
+<script type="text/javascript" src="../static/dist/notificationFx/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="../static/dist/notificationFx/js/classie.js"></script>
+<script type="text/javascript" src="../static/dist/notificationFx/js/notificationFx.js"></script>
+
+<script type="text/javascript" src="../static/dist/dropify/js/dropify.min.js"></script>
+<script type="text/javascript" src="../static/js/waitMe/waitMe.min.js"></script>
+<script type="text/javascript" src="../static/dist/elastislide/js/jquery.elastislide.js"></script>
+
+<script type="text/javascript" src="../static/js/app.js"></script>
+
+
+</html>
